@@ -1,0 +1,76 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+dist/          # Or build/ if you named it differently
+build/         # Alternate build directory name
+coverage/
+*.log
+
+tmp/
+temp/
+*.swp         # Swap files (Vim, etc.)
+*.swo         # Swap files (Vim, etc.)
+*~            # Backup files (various editors)
+*.bak         # Backup files
+
+# Optional: Report files
+report.html
+coverage-report/
+
+# Optional: Compiled output (if different from dist/build)
+out/
+
+# Optional: Cache directories
+cache/
+.cache/
+
+# Optional: Test result files
+test-results/
+
+# Optional: Logs
+logs/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
