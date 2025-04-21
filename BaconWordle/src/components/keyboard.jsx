@@ -54,6 +54,7 @@ function Keyboard({ grid, handleInputChange, handleEnter, deleteLastInput }) {
                     <div 
                         key={letter} 
                         className={keyClass(letter)}
+                        onClick={() => handleInputChange(letter)}
                     >
                         {letter}
                     </div>
