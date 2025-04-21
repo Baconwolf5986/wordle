@@ -236,7 +236,12 @@ function App() {
 
   // FOR: Enter key
   function handleEnter() {
-    if (!secretWord || inputLocked || status || currentInput.length !== columns) return;
+    if (!secretWord) {
+      alert('Secret word not loaded yet. Please try again shortly...');
+      return;
+    }
+    
+    if (inputLocked || status || currentInput.length !== columns) return;
     
     if (wordSet.has(currentInput.toLowerCase())) {
       setInputLocked(true);
