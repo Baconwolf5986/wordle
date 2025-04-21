@@ -7,6 +7,8 @@ import {
 } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase/firebase.js';
 
+// AuthContext - Provides google authentication functionality
+// and manages the current user state across the application.
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
@@ -27,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
     const logOut = async () => {
         try {
-            // Clear only game-related localStorage items
+            // Clear game state when changing user (or logging out)
             localStorage.removeItem('wordle-grid');
             localStorage.removeItem('current-row');
             localStorage.removeItem('status');
@@ -39,11 +41,11 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setCurrentUser(user); // Update currentUser when auth state changes
-            setLoading(false); // Stop loading once the state is determined
+            setCurrentUser(user);
+            setLoading(false);
         });
 
-        return unsubscribe; // Cleanup the listener on unmount
+        return unsubscribe;
     }, []);
 
     const value = {
