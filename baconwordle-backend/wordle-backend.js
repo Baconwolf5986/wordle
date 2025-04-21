@@ -14,9 +14,7 @@ app.use(express.json());
 
 // Initialize Firebase with Admin SDK
 const admin = require('firebase-admin');
-const serviceAccount = JSON.parse(
-    Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT, 'base64').toString('utf8')
-  );
+const serviceAccount = require('./baconwor-firebase-adminsdk-fbsvc-7d07e30f6d.json');
 
 admin.initializeApp({
 credential: admin.credential.cert(serviceAccount),
