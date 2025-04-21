@@ -32,16 +32,18 @@ function App() {
       );
   };
 
-  // SET VARIABLES
+  // ININT STATES
+  // Game State
   const [grid, setGrid] = useState(createEmptyGrid);
   const [currentInput, setCurrentInput] = useState('');
   const [currentRow, setCurrentRow] = useState(0);
   const [currentColumn, setCurrentColumn] = useState(0);
-  const [inputLocked, setInputLocked] = useState(false);
   const [secretWord, setSecretWord] = useState(null);
   const [status, setStatus] = useState('');
+  // Helper
   const [statsVisible, setStatsVisible] = useState(false);
   const [isKeyPressed, setIsKeyPressed] = useState(false);
+  const [inputLocked, setInputLocked] = useState(false);
 
   // Load game state when the component mounts
   // Load game state when the user logs in or out
@@ -62,10 +64,8 @@ function App() {
       setCurrentColumn(0);
       setCurrentInput('');
       setStatus('');
-    } else {
-      // Load existing game state based on whether user is logged in
-      loadGameState();
     }
+    loadGameState();
     
     // Fetch secret word for the day
     const fetchSecretWord = async () => {
@@ -401,8 +401,7 @@ function App() {
     setStatsVisible(!statsVisible);
   }
 
-  // RENDER GRID
-  // Each portion
+  // GRID COMPONENT (basically)
   const renderGrid = () => (
     <div className="grid">
       {grid.map((row, rowIndex) => (

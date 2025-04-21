@@ -8,6 +8,7 @@ function Stats({ setStatsVisible }) {
 
     const [userStats, setUserStats] = useState(null);
 
+    // Get user stats from firebase
     useEffect(() => {
         const fetchUserStats = async () => {
             if (currentUser) {
@@ -32,7 +33,7 @@ function Stats({ setStatsVisible }) {
             ) : (
                 <div>
 
-                    <h2 className="header" >Statistics</h2>
+                    <h2 className="header">Statistics</h2>
                     {userStats ? (
                         <div className="stats-content">
                             <div className="stats-header">
