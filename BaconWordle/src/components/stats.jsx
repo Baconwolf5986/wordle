@@ -36,17 +36,17 @@ function Stats({ setStatsVisible }) {
                     <h2 className="header">Statistics</h2>
                     {userStats ? (
                         <div className="stats-content">
-                            <div className="stats-header">
-                                <div>Games Played</div>
-                                <div>Games Won</div>
-                                <div>Win Percentage</div>
-                                <div>Current Streak</div>
-                            </div>
                             <div className="stats-details">
                                 <div>{userStats.gamesPlayed}</div>
-                                <div>{userStats.gamesWon}</div>
                                 <div>{userStats.winPercentage}%</div>
                                 <div>{userStats.currentStreak}</div>
+                                <div>{userStats.highestStreak}</div>
+                            </div>
+                            <div className="stats-header">
+                                <div>Played</div>
+                                <div>Win%</div>
+                                <div>Current Streak</div>
+                                <div>Highest Streak</div>
                             </div>
                             <h3>Guess Distribution:</h3>
                                 {Object.entries(userStats.guessDistribution).map(([guess, count]) => (

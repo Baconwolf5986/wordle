@@ -99,16 +99,17 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 3rem;
+  margin-bottom: 4rem;
 }
 
 .stats-details {
   display: grid;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 3rem;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 3rem;
 }
 
 .logout-button {
@@ -223,4 +224,18 @@ button {
     align-items: center;
     text-align: center;
   }
+
+  .stats-header {
+    font-size: 1rem;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-details {
+    margin-top: 3rem;
+    font-size: 2rem;
+    gap: 0.2rem;
+  }
+
+  
 }
